@@ -104,7 +104,7 @@ if __name__ == '__main__':
     #    test_dir='./test_case'
     # Windows的cmd执行：python "D:\system files\workspace\selenium\test_project\runtest_htmltestrunner_autosendemail.py"
     # 不用绝对路径会报：ImportError: Start directory is not importable: './test_case'
-    test_dir = 'E:\\Python 3.0\\PycharmProjects\\demo\\testcase'
+    test_dir = 'E:\\Python 3.0\\PycharmProjects\\abc\\testcase'
     # 知道测试报告的路径
     test_report_dir = 'E:\\Python 3.0'
 
