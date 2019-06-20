@@ -3,12 +3,18 @@
 登录
 '''
 
+import os
+import sys
 import time
 import unittest
 import warnings
 
 from appium import webdriver
 from control import config
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
 
 
 class test_login(unittest.TestCase):
