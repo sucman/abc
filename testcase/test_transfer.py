@@ -1,7 +1,8 @@
 # -*- coding:utf-8 -*-
-'''
-登录
-'''
+"""
+转账
+"""
+
 import time
 import unittest
 import warnings
@@ -10,7 +11,8 @@ from appium import webdriver
 from control import config
 
 
-class test_login(unittest.TestCase):
+class Transfer(unittest.TestCase):
+
     @classmethod
     def setUp(self):
         warnings.simplefilter("ignore", ResourceWarning)  # 忽略警告
@@ -30,7 +32,7 @@ class test_login(unittest.TestCase):
         time.sleep(5)
 
     @classmethod
-    def test_login(self):
+    def test_something(self):
         warnings.simplefilter("ignore", ResourceWarning)  # 忽略警告
 
         self.driver.find_element_by_id("loginBtn").click()
@@ -43,11 +45,34 @@ class test_login(unittest.TestCase):
 
         self.driver.find_element_by_id("loginBtn").click()
 
-        time.sleep(30)
+        time.sleep(10)
 
-        # 断言 是否登录成功
-        # self.assertEqual(loginPage.getMainPage(), self.autoDriver.getUrl(), u"登录失败")
+        self.driver.find_element_by_id("mainItem2").click()
+        time.sleep(3)
 
+        self.driver.find_element_by_xpath(
+            "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout").click()
+
+        time.sleep(3)
+
+        self.driver.find_element_by_id("allBtn").click()
+
+        moneyEdit = self.driver.find_element_by_id("moneyEdit")
+        moneyEdit.send_keys("12345")
+
+        self.driver.find_element_by_id("addInfoText").click()
+
+        addInfoEdit = self.driver.find_element_by_id("addInfoEdit")
+        addInfoEdit.send_keys("转账测试")
+
+        self.driver.find_element_by_id("nextBtn").click()
+
+        googleCodeEdit = self.driver.find_element_by_id("googleCodeEdit")
+        googleCodeEdit.send_keys("123456")
+
+        self.driver.find_element_by_id("confirmBtn").click()
+
+    @classmethod
     def tearDown(self):
         self.driver.quit()
 
