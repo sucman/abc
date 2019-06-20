@@ -1,10 +1,14 @@
 # -*- coding:utf-8 -*-
 '''
 登录
-'''
+
 
 import os
 import sys
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
+'''
 import time
 import unittest
 import warnings
@@ -12,9 +16,7 @@ import warnings
 from appium import webdriver
 from control import config
 
-curPath = os.path.abspath(os.path.dirname(__file__))
-rootPath = os.path.split(curPath)[0]
-sys.path.append(rootPath)
+
 
 
 class test_login(unittest.TestCase):
