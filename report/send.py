@@ -106,7 +106,7 @@ if __name__ == '__main__':
     # 不用绝对路径会报：ImportError: Start directory is not importable: './test_case'
     test_dir = 'E:\\Python 3.0\\PycharmProjects\\abc\\testcase'
     # 知道测试报告的路径
-    test_report_dir = 'E:\\Python 3.0'
+    test_report_dir = 'E:\\Python 3.0\\PycharmProjects\\abc\\report'
 
     discover = unittest.defaultTestLoader.discover(test_dir, pattern='test_*.py')
     now = time.strftime('%Y-%m-%d_%H_%M_%S_')

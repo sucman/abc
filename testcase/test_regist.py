@@ -9,7 +9,7 @@ import warnings
 
 from appium import webdriver
 from control import config
-from control import test_db
+from control import db
 
 
 class Register(unittest.TestCase):
@@ -52,7 +52,7 @@ class Register(unittest.TestCase):
 
         # 输入验证码
         iptverifyCode = self.driver.find_element_by_id("verifyCode")
-        result = test_db.get_code("CONTENT", "mns.t_notify_msg", "APP_ID", "SMSG", "GMT_CREATE")
+        result = db.get_code("CONTENT", "mns.t_notify_msg", "APP_ID", "SMSG", "GMT_CREATE")
         mailcode = result[-6:]
         iptverifyCode.send_keys(mailcode)
 
@@ -66,7 +66,7 @@ class Register(unittest.TestCase):
 
         # 输入邀请码
         iptinvitationCode = self.driver.find_element_by_id("invitationCode")
-        result = test_db.get_info("INVITATION_CODE", "member.tm_member", "MEMBER_NAME", "testx", "CREATE_TIME")
+        result = db.get_info("INVITATION_CODE", "member.tm_member", "MEMBER_NAME", "testx", "CREATE_TIME")
         iptinvitationCode.send_keys(result)
 
         # 点击注册

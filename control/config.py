@@ -2,14 +2,14 @@
 '''
 
 '''
-from control import test_getRandom
+from control import getRandom
 
 """
 用户
 """
 LOG_MAIL = "xybtest7@tf.com"
 
-a = test_getRandom.ranstr(9)
+a = getRandom.ranstr(9)
 REG_MAIL = a + "@tf.com"
 
 REG_NAME = a

@@ -9,7 +9,7 @@ import warnings
 
 from appium import webdriver
 from control import config
-from control import test_db
+from control import db
 
 
 class ForgotPwd(unittest.TestCase):
@@ -51,7 +51,7 @@ class ForgotPwd(unittest.TestCase):
 
         # 查询并输入邮箱验证码
         verifyCodeText = self.driver.find_element_by_id("verifyCodeText")
-        result = test_db.get_info("CONTENT", "mns.t_notify_msg", "APP_ID", "SMSG", "GMT_CREATE")
+        result = db.get_info("CONTENT", "mns.t_notify_msg", "APP_ID", "SMSG", "GMT_CREATE")
         mailcode = result[-6:]
         verifyCodeText.send_keys(mailcode)
 
