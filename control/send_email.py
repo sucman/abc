@@ -14,7 +14,6 @@ def send_email(newfile):
     mail_body = f.read()
     f.close()
 
-
     smtpserver = 'smtp.qq.com'
     user = '920100886@qq.com'
     password = 'rjlxvpppnaecbfhb'
